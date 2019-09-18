@@ -6,6 +6,7 @@ const collatedTasks = () => {};
 
 export const useTasks = selectedProject => {
     const [task, setTasks] = useState ([]);
+    const [ tasks, setTasks] = useState([]);
 
     useEffect(() =>{
 let unsubscribe = firebase
@@ -40,10 +41,11 @@ unsubscribe = unsubscribe.onSnapshot(snapshot => {
             )
 : newTasks.filter(task => task.archived !==true)
 
-        )
+    );
+    setArchivedTasks(newTasks.filter(task => task.archived !== false));
 
 
-    )
+         } ); 
+}, [selectedProject]);
 
-    }, 
 };
