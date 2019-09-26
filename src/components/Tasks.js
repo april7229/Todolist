@@ -1,10 +1,13 @@
 import React from 'react';
-import { collatedTasks } from './constants';
+import { checkbox } from './layout/checkbox';
+import {useTasks} from './hooks';
 
-export const Task = () => {
-    const Task = [];
+export const Tasks = () => {
+    const { Tasks } = useTasks(1);
 
-    let projectName = '';
+    console.log(tasks);
+
+    const projectName = '';
  
     return (
         <div className="tasks" data-testid="tasks">
